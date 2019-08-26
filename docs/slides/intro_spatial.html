@@ -29,7 +29,7 @@ background-size: 100% 100%
 
 # Introduction to &lt;br&gt; Spatial Data Analysis
 
-.large[Casey Jelsema | BIOS 604 | ?? Aug 2019]
+.large[Casey Jelsema | BIOS 604 | 28 Aug, 2019]
 
 ]
 ]
@@ -1355,6 +1355,91 @@ Why not?
 ???
 
 - Total number of knot locations: r = 87
+
+
+---
+# Too Few Data
+
+In some contexts, to few data is a problem. 
+
+Recall our our WV maps
+
+--
+ 
+.pull-left[
+
+![](intro_spatial_files/figure-html/few_data_map-1.png)&lt;!-- --&gt;
+
+]
+
+--
+
+.pull-right[
+
+Some concerns:
+
+- What if the outcome is rare?
+
+- What if there is only once instance in a county?
+
+- What if the outcome has *social* or *legal* implications?
+
+]
+
+
+???
+
+- There may be times when it is irresponsible, inappropriate, or unethical to report the data in certain ways.
+- Want to avoid being able to individually identify people.
+- If rates of outcome are low ...
+
+    - Might have unstable rates (is the reported rate even worth reporting?). 
+    - Like a 51-49 "lead" in presidential race
+    - Or a 50% increase in risk of cancer due to certain behavior. Raw rate being: 0.5% to 0.75%.
+    
+    - Aggregating to larger areas (zip code to county, county to state, etc) may give more reliable estimates.
+    - But there may be too coarse, or have "edge effects".
+    
+- "Geographical epidemiology, spatial analysis and geographical information systems: a multidisciplinary glossary"
+  https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2465628/
+
+- Maybe you have more data, but it's on a different spatial grid, how to resolve?
+
+
+---
+# Different Areal Grids
+
+Current research project: GAIL
+
+--
+
+Want: Produce maps and estimates of rate of some outcomes in WV, on a ZIP code level.
+
+Have:
+
+- Data on ZIP code level
+- Data on PO Box ZIP code level
+
+Problem:
+
+- Outcome is rare
+- Some regions in WV are very rural
+- No inherrent match between PO Box and Standard ZIP codes.
+
+--
+
+One Approach:
+
+- Randomly assign cases from one areal grid to the other
+- Introduce some noise, but utilize more data
+
+
+
+???
+
+- GAIL = Geo-assignment of Irregular Locations
+- Sometimes people combine by aggregating to the county level. Not desirable: Loss of granularity.
+- Other times people throw out the PO Box ZIP codes. Not desirable: Loss of data, could be critical.
 
 
 ---
